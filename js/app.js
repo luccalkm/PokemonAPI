@@ -3,9 +3,10 @@ ui = new UI();
 let actualId = 0;
 
 document.querySelector("#search").addEventListener("click", (e) => {
-	const pokemonId = document.querySelector("#searchText").value.toLowerCase();
-	consultarId(pokemonId);
-	consultApi(pokemonId);
+	const pokemonId = document.querySelector("#searchText").value;
+	consultarId(pokemonId.toLowerCase());
+	consultApi(pokemonId.toLowerCase());
+	document.querySelector("#searchText").value = "";
 });
 
 document.querySelector("#next").addEventListener("click", (e) => {
@@ -13,6 +14,7 @@ document.querySelector("#next").addEventListener("click", (e) => {
 	document.querySelector("#searchText").innerText = actualId;
 	consultApi(actualId);
 });
+
 document.querySelector("#previous").addEventListener("click", (e) => {
 	console.log(actualId--);
 	document.querySelector("#searchText").innerText = actualId;
