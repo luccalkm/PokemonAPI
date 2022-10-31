@@ -1,0 +1,20 @@
+.input-group {
+	width: 70%;
+}
+
+.active-type {
+	font-weight: bold !important;
+	color: white !important;
+	text-shadow: 2px 2px black !important;
+	text-align: center;
+}
+
+.error-message {
+	background: rgb(214, 46, 20) !important;
+	color: white;
+	font-weight: bold;
+	font-size: 2rem;
+	padding: 12px;
+	margin-bottom: 12px;
+	transition: all 1s;
+}
