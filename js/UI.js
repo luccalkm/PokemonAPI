@@ -16,7 +16,7 @@ class UI {
                `;
 
 		// BUILD EACH TYPE SPAN
-		output += `<div class="d-flex align-items-center m-auto">`;
+		output += `<div class="d-flex align-items-center ms-4">`;
 		pokemon.types.forEach((e, index) => {
 			const color = this.getTypeColors(e.type.name);
 			output += `
@@ -25,7 +25,7 @@ class UI {
             </p>
          </div>`;
 		});
-		output += `</h1><Hr></div>
+		output += `</h1><Hr style="margin: 8px 0px 16px 0px!important;"></div>
       `;
 
 		// BUILD EACH SPEC ROW
