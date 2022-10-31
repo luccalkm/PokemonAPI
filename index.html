@@ -9,23 +9,24 @@
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
 		<title>Pokedex</title>
 	</head>
-	<body class="d-flex flex-column w-100">
+	<body>
 		<div id="main-outside" class="container">
 			<h1 id="errorPoint" class="pt-3 pb-3 d-flex justify-content-between">Pokedex API - Project</h1>
 			<div class="input-group mb-3">
 				<div class="input-group-prepend">
 					<span class="input-group-text" id="basic-addon1"><iconify-icon inline icon="mdi:pokeball" width="40" height="40"></iconify-icon></span>
 				</div>
-				<input id="searchText" type="text" class="form-control" placeholder="Nome ou Número da Pokedex" arial-label="Pokemon/Id" />
+				<input id="searchText" type="text" class="form-control" placeholder="Pokemon Nome/Id" arial-label="Pokemon/Id" />
 				<button id="search" style="width: 30%" class="btn btn-danger border-white"><iconify-icon icon="bi:search"></iconify-icon></button>
 			</div>
-			<div id="main-inside" class="card d-flex flex-row row-cols-3 p-3">
+			<div id="main-inside" class="card row-cols-3 p-2">
 				<!-- aqui -->
 			</div>
-			<div class="container d-flex w-100 justify-content-center">
-				<a href="#" id="previous" class="btn btn-outline-danger mt-3 p-3 w-25 fw-bold fs-4 me-2">PREVIOUS</a>
-				<a href="#" id="next" class="btn btn-outline-danger mt-3 p-3 w-25 fw-bold fs-4">NEXT</a>
+			<div class="d-flex mb-3">
+				<a href="#" id="previous" class="btn btn-outline-danger mt-3 p-3 w-50 fw-bold fs-4 me-2">PREVIOUS</a>
+				<a href="#" id="next" class="btn btn-outline-danger mt-3 p-3 w-50 fw-bold fs-4">NEXT</a>
 			</div>
+
 			<script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
 			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
 			<script src="./js/pokemon.js"></script>
