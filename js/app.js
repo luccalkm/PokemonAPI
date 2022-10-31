@@ -1,27 +1,47 @@
+// Global Variables
 poke = new PokeApi();
 ui = new UI();
 let actualId = 0;
 
+// Search Buttons
 document.querySelector("#search").addEventListener("click", (e) => {
 	const pokemonId = document.querySelector("#searchText").value;
 	consultarId(pokemonId.toLowerCase());
-	consultApi(pokemonId.toLowerCase());
+	consultarApi(pokemonId.toLowerCase());
 	document.querySelector("#searchText").value = "";
 });
 
+// Search Enter
+document.querySelector("#searchText").addEventListener("keyup", (e) => {
+	if (e.key === "Enter") {
+		const pokemonId = document.querySelector("#searchText").value;
+		consultarId(pokemonId.toLowerCase());
+		consultarApi(pokemonId.toLowerCase());
+		document.querySelector("#searchText").value = "";
+	}
+});
+
+// Next Button
 document.querySelector("#next").addEventListener("click", (e) => {
-	console.log(actualId++);
 	document.querySelector("#searchText").innerText = actualId;
-	consultApi(actualId);
+	actualId++;
+	if (actualId < 0) {
+		actualId = 0;
+	}
+	consultarApi(actualId);
 });
 
+// Previous Button
 document.querySelector("#previous").addEventListener("click", (e) => {
-	console.log(actualId--);
 	document.querySelector("#searchText").innerText = actualId;
-	consultApi(actualId);
+	actualId--;
+	if (actualId < 0) {
+		actualId = 0;
+	}
+	consultarApi(actualId);
 });
 
-function consultApi(pokemonId) {
+function consultarApi(pokemonId) {
 	poke.getPokemon(pokemonId)
 		.then((pokemon) => {
 			ui.showPokemonCard(pokemon.pokemon);

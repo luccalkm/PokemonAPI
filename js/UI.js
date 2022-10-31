@@ -8,32 +8,32 @@ class UI {
 
 		// BUILD IMAGE AND POKEMON NAME
 		output = `
-      <img style="width: 40%; height: 40%; background:#fcfcfc; transition: all 1s;" class="m-auto me-5 card text-left card-img-top p-2 rounded-circle" id="pokemon" src=${pokemon.sprites.front_default} alt="" />
-      <div class="card-body">
+      <img style="background:#fcfcfc; transition: all 1s;" class="m-auto card text-left card-img-top p-2 mb-2 rounded-circle" id="pokemon" src=${pokemon.sprites.front_default} alt="" />
+      <div class="card-body w-100 p-1">
          <div class="container">
-            <div class="row w-100"> 
-               <h1 class="h1">${pokemon.name[0].toUpperCase() + pokemon.name.substring(1)} - ${pokemon.id}</h1>
+            <div class="w-100"> 
+               <h1 class="d-flex nomePokemon fs-3 mb-0">${pokemon.name[0].toUpperCase() + pokemon.name.substring(1)} (${pokemon.id})
                `;
 
 		// BUILD EACH TYPE SPAN
-		output += `<div class="row w-100 d-flex mt-3">`;
+		output += `<div class="d-flex align-items-center m-auto">`;
 		pokemon.types.forEach((e, index) => {
 			const color = this.getTypeColors(e.type.name);
 			output += `
          <div class="col pl-0">
-            <p style="background: ${color};" id="type-output" class="active-type form-control lead ">${pokemon.types[index]["type"]["name"].toUpperCase()}
+            <p style="background: ${color};" id="type-output" class="active-type form-control lead m-0">${pokemon.types[index]["type"]["name"].toUpperCase()}
             </p>
          </div>`;
 		});
-		output += `<Hr></div>
+		output += `</h1><Hr></div>
       `;
 
 		// BUILD EACH SPEC ROW
 		output += "</div>";
 		pokemon.stats.forEach((e, index) => {
 			output += `<div class="row ms-lg-0 text-right">
-         <div style="text-align: center; font-weight: bold;" class="col-3 text-white bg-danger p-2 border">${e["stat"]["name"].toUpperCase()}</div>
-         <div style="text-align: center;" class="col border p-2 ">${e["base_stat"]}</div>
+         <div style="text-align: center; font-weight: bold;" class="col-5 text-white bg-danger p-2 border">${e["stat"]["name"].toUpperCase()}</div>
+         <div style="text-align: center;" class="col border p-1 ">${e["base_stat"]}</div>
          </div>`;
 		});
 

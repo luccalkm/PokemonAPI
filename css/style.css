@@ -1,7 +1,9 @@
+/* General configurations */
 .input-group {
 	width: 70%;
 }
 
+/* Type badge */
 .active-type {
 	font-weight: bold !important;
 	color: white !important;
@@ -9,6 +11,7 @@
 	text-align: center;
 }
 
+/* Error message class */
 .error-message {
 	background: rgb(214, 46, 20) !important;
 	color: white;
@@ -17,4 +20,30 @@
 	padding: 12px;
 	margin-bottom: 12px;
 	transition: all 1s;
+}
+
+/* Image */
+#pokemon {
+	width: 25%;
+	height: 25%;
+}
+
+/* H1 */
+.nomePokemon {
+	width: 100% !important;
+}
+
+/* Responsivity Mobile */
+@media screen and (max-width: 1500px) {
+	.nomePokemon {
+		width: 100% !important;
+	}
+	#pokemon {
+		width: 40%;
+	}
+}
+@media screen and (max-width: 600px) {
+	#pokemon {
+		width: 60%;
+	}
 }
