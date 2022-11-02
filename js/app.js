@@ -45,6 +45,7 @@ function consultarApi(pokemonId) {
 	poke.getPokemon(pokemonId)
 		.then((pokemon) => {
 			ui.showPokemonCard(pokemon.pokemon);
+			// showTempoCard(pokemon.pokemon);
 		})
 		.catch((err) => {
 			ui.showErrorMessage("Nome/Número do Pokémon inválido! Tente novamente.");

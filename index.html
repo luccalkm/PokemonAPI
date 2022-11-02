@@ -10,21 +10,25 @@
 		<title>Pokedex</title>
 	</head>
 	<body>
-		<div id="main-outside" class="container">
-			<h1 id="errorPoint" class="pt-3 pb-3 d-flex justify-content-between">Pokedex API - Project</h1>
-			<div class="input-group mb-3">
-				<div class="input-group-prepend">
-					<span class="input-group-text" id="basic-addon1"><iconify-icon inline icon="mdi:pokeball" width="40" height="40"></iconify-icon></span>
+		<nav class="navbar justify-content-center navbar-expand-lg navbar-light bg-danger">
+			<h1 class="h1 text-white ms-lg-5">Pokedex API - Project</h1>
+		</nav>
+		<div id="main-outside" class="container-fluid">
+			<div id="errorPoint" class="container-xxl mt-3">
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<span class="input-group-text" id="basic-addon1"><iconify-icon inline icon="mdi:pokeball" width="40" height="40"></iconify-icon></span>
+					</div>
+					<input id="searchText" type="text" class="form-control" placeholder="Pokemon Nome/Id" arial-label="Pokemon/Id" />
+					<button id="search" style="width: 30%" class="btn btn-danger border-white"><iconify-icon icon="bi:search"></iconify-icon></button>
 				</div>
-				<input id="searchText" type="text" class="form-control" placeholder="Pokemon Nome/Id" arial-label="Pokemon/Id" />
-				<button id="search" style="width: 30%" class="btn btn-danger border-white"><iconify-icon icon="bi:search"></iconify-icon></button>
-			</div>
-			<div id="main-inside" class="card row-cols-3 p-2">
-				<!-- aqui -->
-			</div>
-			<div class="d-flex mb-3">
-				<a href="#" id="previous" class="btn btn-outline-danger mt-3 p-3 w-50 fw-bold fs-4 me-2">PREVIOUS</a>
-				<a href="#" id="next" class="btn btn-outline-danger mt-3 p-3 w-50 fw-bold fs-4">NEXT</a>
+				<div class="d-flex mb-3">
+					<a href="#" id="previous" class="btn btn-outline-danger mt-3 p-3 w-50 fw-bold fs-4 me-2">PREVIOUS</a>
+					<a href="#" id="next" class="btn btn-outline-danger mt-3 p-3 w-50 fw-bold fs-4">NEXT</a>
+				</div>
+				<div id="main-inside" class="card row cols-3 p-2">
+					<!-- aqui -->
+				</div>
 			</div>
 
 			<script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
