@@ -8,11 +8,10 @@ class UI {
 
 		// BUILD IMAGE AND POKEMON NAME
 		output = `
-      <img style="background:#fcfcfc; transition: all 1s;" class="m-auto card text-left card-img-top p-2 mb-2 rounded-circle" id="pokemon" src=${pokemon.sprites.front_default} alt="" />
       <div class="card-body w-100 p-1">
          <div class="container">
-            <div class="w-100"> 
-               <h1 class="d-flex nomePokemon fs-3 mb-0">${pokemon.name[0].toUpperCase() + pokemon.name.substring(1)} (${pokemon.id})
+            <div class="w-100 "> 
+               <h1 class="d-flex nomePokemon justify-content-center align-items-center fs-3 mb-0">${pokemon.name[0].toUpperCase() + pokemon.name.substring(1)} (${pokemon.id})
                `;
 
 		// BUILD EACH TYPE SPAN
@@ -25,15 +24,40 @@ class UI {
             </p>
          </div>`;
 		});
-		output += `</h1><Hr style="margin: 8px 0px 16px 0px!important;"></div>
+		output += `</h1><Hr style="margin: 8px 0px 16px 0px!important;"></div>    <img style="background:#fcfcfc; transition: all 1s;" class="m-auto card text-left card-img-top p-2 mb-2 rounded-circle" id="pokemon" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png" alt="" />
       `;
 
 		// BUILD EACH SPEC ROW
 		output += "</div>";
 		pokemon.stats.forEach((e, index) => {
-			output += `<div class="row ms-lg-0 text-right">
-         <div style="text-align: center; font-weight: bold;" class="col-5 text-white bg-danger p-2 border">${e["stat"]["name"].toUpperCase()}</div>
-         <div style="text-align: center;" class="col border p-1 ">${e["base_stat"]}</div>
+			// SIZE OF PROGRESS BAR
+			let progressBar = Number(e["base_stat"]) / 1.5;
+
+			// SPEC NAME DISPLAYED
+			let displayName = e["stat"]["name"];
+
+			// CHANGE SPECIAL TO SP.
+			if (displayName.startsWith("special")) {
+				displayName = displayName.replace("special-", "sp. ");
+			}
+
+			// LIMIT 69% SO IT DOESNT GO OVER THE SUM OF 100%
+			// (31% THE SPEC NAMES and 69% FOR THE REST)
+			if (progressBar > 90) {
+				progressBar = 90;
+			} else if (progressBar < 0) {
+				progressBar = 1;
+			}
+
+			output += `
+			<div style="width: 75%;" class="m-auto">
+         	<div style="font-weight: bold;" class="row text-center p-2">
+					${displayName.toUpperCase()} - ${e["base_stat"]}
+				</div>
+				<div class="row">
+					<span style="font-weight: bold; width: ${progressBar}%; height: 24px!important;" class="border text-center bg-danger"></span>
+					<span style="background:#dee2e6; height: 24px!important;" class="border col"></span>
+				</div>
          </div>`;
 		});
 
